@@ -1,0 +1,61 @@
+@import "./core/styles/variables";
+
+.content {
+    position: relative;
+    height: 100vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Network Status Section */
+.network-status {
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    box-shadow: 0 .5rem 1.2rem rgba(0, 0, 0, .2);
+    position: relative;
+    width: 500px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.network-status__title {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.network-status__connection {
+    margin: 2rem 0 3rem;
+    color: $green;
+    font-size: 3rem;
+
+    &--offline {
+        color: $error;
+    }
+}
+
+.network-status__icon {
+    width: 48px;
+    height: 48px;
+    background: $green;
+    position: absolute;
+    left: calc(50% - 24px);
+    bottom: -25px;
+    border-radius: 50px;
+
+    &--offline {
+        background: $error;
+    }
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 25px;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 100%;
+}

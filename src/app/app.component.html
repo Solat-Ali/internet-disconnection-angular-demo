@@ -1,0 +1,24 @@
+<div class="content">
+
+  <div class="network-status">
+    <div class="network-status__title">
+      You are currently:
+    </div>
+
+    <ng-container *ngIf="{connected: isConnectionOnline$ | async} as networkStatus" >
+      <div class=" network-status__connection"
+      [class.network-status__connection--offline]="!networkStatus.connected">
+      {{ networkStatus.connected ? 'online' : 'offline'}}
+    </div>
+
+    <div class="network-status__icon" [class.network-status__icon--offline]="!networkStatus.connected">
+    </div>
+    </ng-container>
+
+  </div>
+</div>
+
+<div class="footer">
+  © 2024, All Rights Reserved. <br />
+  Created by <a href="https://www.linkedin.com/in/solat-ali" target="_blank">Solat Ali</a>
+</div>
