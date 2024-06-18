@@ -1,6 +1,6 @@
 # Network Status Check Demo
 
-This is a simple Angular application which demonstrates real-time network status check. 
+This is a simple Angular application which demonstrates real-time network status check using RxJS. 
 
 ## How To Test: 
 Just open the network tab, go to Network -> Throttling and toggle between "Offline" and "Online" options to see the output. 
