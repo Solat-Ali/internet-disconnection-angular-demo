@@ -10,6 +10,6 @@ The network monitoring logic is written within `network-status.service` file. If
 
 
 If you found this repository useful, consider giving it a star! <br/> 
-Created By [https://www.linkedin.com/in/solat-ali](Solat Ali)
+Created By [Solat Ali](https://www.linkedin.com/in/solat-ali)
 
 
