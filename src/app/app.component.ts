@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Observable, fromEvent, map, merge, tap } from 'rxjs';
+import { NetworkStatusService } from './core/services/network-status.service';
 
 @Component({
   selector: 'app-root',
@@ -11,17 +11,6 @@ import { Observable, fromEvent, map, merge, tap } from 'rxjs';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  isConnectionOnline$: Observable<boolean>;
-
-  constructor() {
-    this.isConnectionOnline$ = merge(
-      fromEvent(window, 'load').pipe(map(() => true)),
-      fromEvent(window, 'online').pipe(map(() => true)),
-      fromEvent(window, 'offline').pipe(map(() => false))
-    ).pipe(
-      tap(res => {
-        console.log("Status: ", res);
-      })
-    )
-  }
+  networkService= inject(NetworkStatusService);
+  isConnectionOnline$ = this.networkService.monitorNetworkConnection();
 }
