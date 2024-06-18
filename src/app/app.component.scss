@@ -3,7 +3,6 @@
 .content {
     position: relative;
     height: 100vh;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,14 +14,18 @@
     border-radius: 10px;
     box-shadow: 0 .5rem 1.2rem rgba(0, 0, 0, .2);
     position: relative;
-    width: 500px;
     text-align: center;
     text-transform: capitalize;
+    width: calc(100% - 50px);
+
+    @media (min-width: '576px') {
+        width: 500px;
+    }
 }
 
 .network-status__title {
     margin-top: 2rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.117rem + 0.5674vw, 1.5rem);
     font-weight: bold;
     margin-right: 10px;
 }
@@ -30,7 +33,7 @@
 .network-status__connection {
     margin: 2rem 0 3rem;
     color: $green;
-    font-size: 3rem;
+    font-size: clamp(2rem, 1.4681rem + 2.2695vw, 3rem);
 
     &--offline {
         color: $error;
